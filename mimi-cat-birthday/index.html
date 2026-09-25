@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Mimi! 🐾🎂</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti for Celebration Effects (Zero Audio) -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🐱</text></svg>">
+</head>
+<body class="min-h-screen text-slate-700 selection:bg-pink-200 selection:text-pink-800">
+
+  <!-- Floating Ambient Cat Stickers (Visual Delight, Audio-Free) -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 select-none opacity-40">
+    <div class="absolute top-12 left-6 text-3xl floating-item">🎈</div>
+    <div class="absolute top-28 right-8 text-3xl floating-item-delay">✨</div>
+    <div class="absolute top-1/3 left-4 text-2xl floating-item">🧶</div>
+    <div class="absolute top-1/2 right-6 text-3xl floating-item-delay">🌸</div>
+    <div class="absolute bottom-32 left-10 text-3xl floating-item">🐾</div>
+    <div class="absolute bottom-20 right-12 text-3xl floating-item-delay">🐟</div>
+  </div>
+
+  <!-- Top Sticky Navigation Bar -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-pink-100 shadow-sm transition-all">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2 cursor-pointer" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <span class="text-2xl animate-bounce">🐱</span>
+        <span class="font-bubble text-pink-600 font-bold text-lg md:text-xl tracking-wide">
+          Mimi's Purr-fect Day
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Audio-free badge -->
+        <span class="hidden md:inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold bg-pink-50 text-pink-600 border border-pink-200">
+          <span>🔇</span> Silent & Peaceful
+        </span>
+
+        <!-- Quick Confetti Poppers -->
+        <button id="btn-paw-confetti" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-pink-100 text-pink-700 hover:bg-pink-200 shadow-sm transition-all transform active:scale-95" title="Celebratory Confetti">
+          <span>🎉</span> <span>Celebrate</span>
+        </button>
+
+        <!-- Personalize Button -->
+        <button id="btn-open-personalize" class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-gradient-to-r from-pink-500 to-rose-400 text-white shadow-sm hover:opacity-95 transition-all transform active:scale-95" title="Customize Personal Message">
+          <span>✏️</span> <span>Personalize</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Wrap -->
+  <main class="relative z-10 max-w-5xl mx-auto px-4 pt-8 pb-20 space-y-16 sm:space-y-20">
+
+    <!-- HERO SECTION -->
+    <section class="relative overflow-hidden rounded-3xl bg-gradient-to-b from-pink-100/90 via-purple-50/60 to-white/90 border border-pink-200/80 p-6 sm:p-12 text-center shadow-lg">
+      
+      <!-- Sparkly Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-pink-200/90 text-pink-800 text-xs sm:text-sm font-bold tracking-wide mb-4 shadow-sm animate-pulse">
+        <span>🐾</span>
+        <span>THE SWEETEST BIRTHDAY CELEBRATION</span>
+        <span>🐾</span>
+      </div>
+
+      <!-- Main Animated Hero Heading -->
+      <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold text-slate-800 font-bubble tracking-tight leading-tight">
+        Happy Birthday, <br class="sm:hidden">
+        <span id="hero-mimi-name" class="bg-gradient-to-r from-pink-600 via-rose-500 to-purple-600 bg-clip-text text-transparent underline decoration-pink-300 decoration-wavy">
+          Mimi
+        </span>! 🎂🐾
+      </h1>
+
+      <p class="mt-4 text-base sm:text-xl text-slate-600 max-w-2xl mx-auto font-medium leading-relaxed">
+        Today is all about celebrating the world's most adorable human. May your special day be filled with warm cuddles, sweet treats, and endless love!
+      </p>
+
+      <!-- Animated Hero Kitties Illustration -->
+      <div class="mt-8 flex justify-center items-end gap-3 sm:gap-8 select-none">
+        
+        <!-- Left Kitten (Calico) -->
+        <div class="flex flex-col items-center">
+          <svg class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md floating-item" viewBox="0 0 120 120">
+            <!-- Party Hat -->
+            <polygon points="60,8 45,45 75,45" fill="#fde047" stroke="#f59e0b" stroke-width="2"/>
+            <circle cx="60" cy="8" r="4" fill="#ec4899"/>
+            <!-- Body -->
+            <ellipse cx="60" cy="85" rx="35" ry="30" fill="#fef3c7"/>
+            <path d="M40 70 Q50 95 65 95 Q80 95 85 75" fill="#f59e0b" opacity="0.3"/>
+            <!-- Ears -->
+            <polygon class="ear-left" points="35,45 20,20 50,30" fill="#f59e0b"/>
+            <polygon class="ear-right" points="85,45 100,20 70,30" fill="#fef3c7"/>
+            <!-- Head -->
+            <ellipse cx="60" cy="55" rx="32" ry="25" fill="#fffbeb"/>
+            <!-- Eyes (Happy Arches) -->
+            <path d="M46 54 Q51 47 56 54" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <path d="M64 54 Q69 47 74 54" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Nose & Mouth -->
+            <polygon points="60,60 57,57 63,57" fill="#fb7185"/>
+            <path d="M57 61 Q60 65 63 61" stroke="#fb7185" stroke-width="2" fill="none"/>
+            <!-- Cheeks -->
+            <circle cx="43" cy="60" r="5" fill="#fda4af" opacity="0.7"/>
+            <circle cx="77" cy="60" r="5" fill="#fda4af" opacity="0.7"/>
+            <!-- Whiskers -->
+            <line x1="30" y1="58" x2="15" y2="56" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="30" y1="63" x2="15" y2="65" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="90" y1="58" x2="105" y2="56" stroke="#cbd5e1" stroke-width="2"/>
+            <line x1="90" y1="63" x2="105" y2="65" stroke="#cbd5e1" stroke-width="2"/>
+            <!-- Paws -->
+            <circle cx="45" cy="100" r="10" fill="#fff"/>
+            <circle cx="75" cy="100" r="10" fill="#fff"/>
+          </svg>
+          <span class="text-xs font-bold text-slate-500 mt-1">Boba</span>
+        </div>
+
+        <!-- Center Kitten (White Fluffball with Crown) -->
+        <div class="flex flex-col items-center">
+          <svg class="w-28 h-28 sm:w-36 sm:h-36 drop-shadow-lg" viewBox="0 0 120 120">
+            <!-- Crown -->
+            <path d="M45 28 L50 14 L60 22 L70 14 L75 28 Z" fill="#fbbf24" stroke="#d97706" stroke-width="1.5"/>
+            <circle cx="50" cy="13" r="2.5" fill="#ec4899"/>
+            <circle cx="60" cy="21" r="2.5" fill="#3b82f6"/>
+            <circle cx="70" cy="13" r="2.5" fill="#ec4899"/>
+            <!-- Ears -->
+            <polygon class="ear-left" points="32,45 15,18 48,28" fill="#fff" stroke="#fbcfe8" stroke-width="2"/>
+            <polygon class="ear-right" points="88,45 105,18 72,28" fill="#fff" stroke="#fbcfe8" stroke-width="2"/>
+            <!-- Inner ears -->
+            <polygon points="30,40 20,23 42,30" fill="#fbcfe8"/>
+            <polygon points="90,40 100,23 78,30" fill="#fbcfe8"/>
+            <!-- Body -->
+            <ellipse cx="60" cy="85" rx="38" ry="32" fill="#ffffff" stroke="#fecdd3" stroke-width="2"/>
+            <!-- Head -->
+            <ellipse cx="60" cy="52" rx="35" ry="28" fill="#ffffff" stroke="#fecdd3" stroke-width="2"/>
+            <!-- Big Cute Eyes with sparkles -->
+            <circle cx="48" cy="50" r="6" fill="#4a5568"/>
+            <circle cx="50" cy="48" r="2" fill="#ffffff"/>
+            <circle cx="72" cy="50" r="6" fill="#4a5568"/>
+            <circle cx="74" cy="48" r="2" fill="#ffffff"/>
+            <!-- Pink Nose & W-Mouth -->
+            <polygon points="60,56 57,53 63,53" fill="#f43f5e"/>
+            <path d="M54 58 Q57 62 60 58 Q63 62 66 58" stroke="#f43f5e" stroke-width="2" fill="none" stroke-linecap="round"/>
+            <!-- Blush -->
+            <circle cx="40" cy="58" r="6" fill="#fecdd3" opacity="0.9"/>
+            <circle cx="80" cy="58" r="6" fill="#fecdd3" opacity="0.9"/>
+            <!-- Red Birthday Bowtie -->
+            <path d="M50 78 Q60 84 50 90 L60 84 L70 90 Q60 84 70 78 Z" fill="#ff4d79"/>
+            <circle cx="60" cy="84" r="3.5" fill="#fde047"/>
+            <!-- Paws -->
+            <circle cx="45" cy="102" r="10" fill="#fff" stroke="#fecdd3" stroke-width="1.5"/>
+            <circle cx="75" cy="102" r="10" fill="#fff" stroke="#fecdd3" stroke-width="1.5"/>
+          </svg>
+          <span class="text-xs font-bold text-pink-600 mt-1">Mochi (Princess)</span>
+        </div>
+
+        <!-- Right Kitten (Orange Tabby) -->
+        <div class="flex flex-col items-center">
+          <svg class="w-20 h-20 sm:w-28 sm:h-28 drop-shadow-md floating-item-delay" viewBox="0 0 120 120">
+            <!-- Party Hat -->
+            <polygon points="60,10 48,46 72,46" fill="#c084fc" stroke="#9333ea" stroke-width="2"/>
+            <circle cx="60" cy="10" r="4" fill="#fbbf24"/>
+            <!-- Body -->
+            <ellipse cx="60" cy="85" rx="35" ry="30" fill="#fed7aa"/>
+            <!-- Ears -->
+            <polygon class="ear-left" points="35,45 20,22 50,32" fill="#fb923c"/>
+            <polygon class="ear-right" points="85,45 100,22 70,32" fill="#fb923c"/>
+            <!-- Head -->
+            <ellipse cx="60" cy="55" rx="32" ry="25" fill="#ffedd5"/>
+            <!-- Tabby forehead stripes -->
+            <path d="M54 36 L56 44 M60 34 L60 45 M66 36 L64 44" stroke="#ea580c" stroke-width="2" stroke-linecap="round"/>
+            <!-- Eyes (Blinking winks) -->
+            <circle cx="48" cy="54" r="5" fill="#4a5568"/>
+            <circle cx="49" cy="52" r="1.5" fill="#ffffff"/>
+            <path d="M67 54 Q72 48 77 54" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+            <!-- Nose & Smile -->
+            <polygon points="60,60 57,57 63,57" fill="#f43f5e"/>
+            <path d="M57 61 Q60 65 63 61" stroke="#f43f5e" stroke-width="2" fill="none"/>
+            <!-- Cheeks -->
+            <circle cx="42" cy="61" r="5" fill="#fca5a5" opacity="0.8"/>
+            <circle cx="78" cy="61" r="5" fill="#fca5a5" opacity="0.8"/>
+            <!-- Paws -->
+            <circle cx="45" cy="100" r="10" fill="#fed7aa"/>
+            <circle cx="75" cy="100" r="10" fill="#fed7aa"/>
+          </svg>
+          <span class="text-xs font-bold text-amber-600 mt-1">Latte</span>
+        </div>
+
+      </div>
+
+      <!-- Quick Scroll Navigation Chips -->
+      <div class="mt-8 flex flex-wrap justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-semibold">
+        <a href="#birthday-cake" class="px-4 py-2 rounded-2xl bg-white/90 text-pink-700 shadow-sm hover:shadow hover:bg-pink-50 transition border border-pink-200">
+          🎂 Blow Candles
+        </a>
+        <a href="#cat-lounge" class="px-4 py-2 rounded-2xl bg-white/90 text-purple-700 shadow-sm hover:shadow hover:bg-purple-50 transition border border-purple-200">
+          🐾 Pet the Kitties
+        </a>
+        <a href="#flip-cards" class="px-4 py-2 rounded-2xl bg-white/90 text-rose-700 shadow-sm hover:shadow hover:bg-rose-50 transition border border-rose-200">
+          ✨ Why You're Purr-fect
+        </a>
+        <a href="#gift-boxes" class="px-4 py-2 rounded-2xl bg-white/90 text-amber-700 shadow-sm hover:shadow hover:bg-amber-50 transition border border-amber-200">
+          🎁 Mystery Gifts
+        </a>
+        <a href="#love-letter-section" class="px-4 py-2 rounded-2xl bg-white/90 text-pink-700 shadow-sm hover:shadow hover:bg-pink-50 transition border border-pink-200">
+          💌 Love Letter
+        </a>
+      </div>
+
+    </section>
+
+    <!-- SECTION 1: INTERACTIVE BIRTHDAY CAKE & CANDLE BLOWOUT -->
+    <section id="birthday-cake" class="scroll-mt-20 rounded-3xl bg-white/80 backdrop-blur-sm border border-pink-200 p-6 sm:p-10 shadow-md text-center">
+      <div class="max-w-xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-pink-500 bg-pink-100 px-3 py-1 rounded-full">
+          Make a Birthday Wish
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          Mimi's Special Birthday Cake 🎂
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Tap the flickering candles (or the button below) to blow them out and make a secret wish!
+        </p>
+
+        <!-- CAKE CONTAINER -->
+        <div class="relative mt-10 mb-6 flex flex-col items-center justify-center">
+
+          <!-- Candles Row -->
+          <div class="flex justify-center items-end gap-8 sm:gap-12 relative z-20 mb-[-4px]">
+            <!-- Candle 1 -->
+            <div class="relative flex flex-col items-center cursor-pointer group" title="Click to blow out">
+              <div class="candle-flame text-2xl select-none" data-candle="1">🔥</div>
+              <div class="w-3.5 h-12 bg-gradient-to-b from-pink-300 to-pink-400 rounded-t-sm shadow-sm border border-pink-300"></div>
+            </div>
+
+            <!-- Candle 2 (Center) -->
+            <div class="relative flex flex-col items-center cursor-pointer group" title="Click to blow out">
+              <div class="candle-flame text-3xl select-none" data-candle="2">🔥</div>
+              <div class="w-4 h-14 bg-gradient-to-b from-yellow-200 to-yellow-400 rounded-t-sm shadow-sm border border-yellow-300"></div>
+            </div>
+
+            <!-- Candle 3 -->
+            <div class="relative flex flex-col items-center cursor-pointer group" title="Click to blow out">
+              <div class="candle-flame text-2xl select-none" data-candle="3">🔥</div>
+              <div class="w-3.5 h-12 bg-gradient-to-b from-purple-300 to-purple-400 rounded-t-sm shadow-sm border border-purple-300"></div>
+            </div>
+          </div>
+
+          <!-- Tier 1: Top Cake Layer with Cat Ears -->
+          <div class="relative w-44 sm:w-56 h-16 bg-gradient-to-r from-pink-200 via-rose-100 to-pink-200 rounded-t-3xl border-2 border-pink-300 shadow-inner flex items-center justify-center">
+            <!-- Cat Ear Decorations on Top -->
+            <div class="absolute -top-3 left-4 w-6 h-6 bg-pink-300 rotate-45 rounded-sm border border-pink-400"></div>
+            <div class="absolute -top-3 right-4 w-6 h-6 bg-pink-300 -rotate-45 rounded-sm border border-pink-400"></div>
+            <!-- Frosting Drips -->
+            <div class="text-sm font-bubble font-bold text-pink-600 tracking-wider">
+              🍓 Mimi 🍓
+            </div>
+          </div>
+
+          <!-- Tier 2: Middle Layer with Strawberries -->
+          <div class="w-60 sm:w-72 h-16 bg-gradient-to-r from-pink-300 via-pink-200 to-pink-300 border-x-2 border-b-2 border-pink-400 shadow-md flex items-center justify-around px-4">
+            <span class="text-xl">🍓</span>
+            <span class="text-base">🐾</span>
+            <span class="text-xl">🍓</span>
+            <span class="text-base">🐾</span>
+            <span class="text-xl">🍓</span>
+          </div>
+
+          <!-- Tier 3: Bottom Layer -->
+          <div class="w-72 sm:w-88 h-18 bg-gradient-to-r from-rose-200 via-pink-100 to-rose-200 rounded-b-2xl border-x-2 border-b-2 border-pink-400 shadow-lg flex items-center justify-center">
+            <div class="text-xs font-semibold text-pink-700 tracking-widest uppercase">
+              ✨ Queen of Cuteness ✨
+            </div>
+          </div>
+
+          <!-- Cake Stand -->
+          <div class="w-80 sm:w-96 h-4 bg-gradient-to-r from-slate-200 via-white to-slate-200 rounded-full border border-slate-300 shadow-md mt-1"></div>
+          <div class="w-32 h-6 bg-slate-200 rounded-b-xl border border-slate-300 shadow-sm"></div>
+
+        </div>
+
+        <!-- Wish Reveal Banner (Hidden until candles blown) -->
+        <div id="wish-banner" class="hidden flex-col items-center justify-center p-5 rounded-2xl bg-gradient-to-r from-pink-500 via-rose-500 to-purple-500 text-white shadow-xl animate-bounce my-4">
+          <span class="text-3xl">✨ 💖 🐾</span>
+          <h3 class="text-xl sm:text-2xl font-bold font-bubble mt-1">
+            May All Your Wishes Come True, Mimi!
+          </h3>
+          <p class="text-xs sm:text-sm text-pink-100 max-w-md mt-1">
+            You deserve every ounce of happiness, sunshine, sweet treats, and love in the universe!
+          </p>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-6 flex flex-wrap justify-center gap-3">
+          <button id="btn-blow-candles" class="px-6 py-2.5 rounded-full font-bold text-white bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 shadow-md hover:shadow-lg transition transform active:scale-95 text-sm sm:text-base">
+            💨 Blow Out Candles
+          </button>
+          <button id="btn-relight-candles" class="hidden px-6 py-2.5 rounded-full font-bold text-pink-700 bg-pink-100 hover:bg-pink-200 shadow-sm transition transform active:scale-95 text-sm sm:text-base border border-pink-300">
+            🔥 Relight Candles
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: PET THE KITTIES LOUNGE -->
+    <section id="cat-lounge" class="scroll-mt-20 rounded-3xl bg-gradient-to-br from-purple-50/80 via-pink-50/70 to-amber-50/60 border border-purple-200 p-6 sm:p-10 shadow-md">
+      <div class="text-center max-w-xl mx-auto">
+        <span class="text-xs font-bold tracking-wider uppercase text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          Interactive Petting Cafe
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          Pet the Kitties for Mimi 🐾
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Tap or click on any kitten to pet them! They show happy reactions and sweet messages just for you.
+        </p>
+
+        <!-- Pet Counter Badge -->
+        <div class="mt-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/90 border border-purple-200 shadow-sm text-xs sm:text-sm font-bold text-purple-700">
+          <span>💖</span>
+          <span id="pet-counter-badge">0 Cat Hugs & Pets</span>
+        </div>
+      </div>
+
+      <!-- Interactive Cats Grid -->
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        
+        <!-- CAT 1: Mochi -->
+        <div class="interactive-cat relative bg-white/90 rounded-2xl p-5 border border-pink-200 shadow-sm hover:shadow-md cursor-pointer transition transform hover:-translate-y-1 text-center" data-cat="mochi">
+          <div class="h-32 flex items-center justify-center relative">
+            <svg class="w-24 h-24 drop-shadow" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="55" rx="35" ry="30" fill="#ffffff" stroke="#fbcfe8" stroke-width="2"/>
+              <!-- Ears -->
+              <polygon points="25,40 12,15 42,26" fill="#fff" stroke="#fbcfe8" stroke-width="2"/>
+              <polygon points="75,40 88,15 58,26" fill="#fff" stroke="#fbcfe8" stroke-width="2"/>
+              <polygon points="25,36 17,20 38,28" fill="#fbcfe8"/>
+              <polygon points="75,36 83,20 62,28" fill="#fbcfe8"/>
+              <!-- Eyes Happy -->
+              <path d="M38 52 Q43 45 48 52" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M52 52 Q57 45 62 52" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Nose & Blush -->
+              <polygon points="50,56 47,53 53,53" fill="#f43f5e"/>
+              <circle cx="32" cy="58" r="5" fill="#fecdd3"/>
+              <circle cx="68" cy="58" r="5" fill="#fecdd3"/>
+              <!-- Pink Bow -->
+              <path d="M42 28 L58 36 L58 28 L42 36 Z" fill="#ff6b8b"/>
+              <circle cx="50" cy="32" r="3" fill="#ffd166"/>
+            </svg>
+          </div>
+          <h3 class="font-bubble font-bold text-slate-800 text-lg">Mochi</h3>
+          <p class="text-xs text-pink-600 font-semibold mt-0.5">The Soft Cloud ☁️</p>
+          <div class="mt-3 text-xs bg-pink-50 text-pink-700 py-1.5 px-3 rounded-full border border-pink-200">
+            🐾 Click to give head scratches!
+          </div>
+        </div>
+
+        <!-- CAT 2: Boba -->
+        <div class="interactive-cat relative bg-white/90 rounded-2xl p-5 border border-purple-200 shadow-sm hover:shadow-md cursor-pointer transition transform hover:-translate-y-1 text-center" data-cat="boba">
+          <div class="h-32 flex items-center justify-center relative">
+            <svg class="w-24 h-24 drop-shadow" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="55" rx="35" ry="30" fill="#fef3c7" stroke="#fde68a" stroke-width="2"/>
+              <path d="M60 40 Q75 60 78 80 Q65 80 50 65" fill="#f59e0b" opacity="0.4"/>
+              <!-- Ears -->
+              <polygon points="25,40 12,15 42,26" fill="#f59e0b"/>
+              <polygon points="75,40 88,15 58,26" fill="#fef3c7" stroke="#fde68a"/>
+              <!-- Eyes Big -->
+              <circle cx="38" cy="52" r="5" fill="#4a5568"/>
+              <circle cx="40" cy="50" r="1.5" fill="#ffffff"/>
+              <circle cx="62" cy="52" r="5" fill="#4a5568"/>
+              <circle cx="64" cy="50" r="1.5" fill="#ffffff"/>
+              <!-- Nose -->
+              <polygon points="50,58 47,55 53,55" fill="#fb7185"/>
+              <path d="M47 59 Q50 62 53 59" stroke="#fb7185" stroke-width="2" fill="none"/>
+              <circle cx="30" cy="58" r="4.5" fill="#fda4af" opacity="0.6"/>
+              <circle cx="70" cy="58" r="4.5" fill="#fda4af" opacity="0.6"/>
+            </svg>
+          </div>
+          <h3 class="font-bubble font-bold text-slate-800 text-lg">Boba</h3>
+          <p class="text-xs text-purple-600 font-semibold mt-0.5">The Sweet Calico 🧋</p>
+          <div class="mt-3 text-xs bg-purple-50 text-purple-700 py-1.5 px-3 rounded-full border border-purple-200">
+            🐾 Click to chin scratch!
+          </div>
+        </div>
+
+        <!-- CAT 3: Latte -->
+        <div class="interactive-cat relative bg-white/90 rounded-2xl p-5 border border-amber-200 shadow-sm hover:shadow-md cursor-pointer transition transform hover:-translate-y-1 text-center" data-cat="latte">
+          <div class="h-32 flex items-center justify-center relative">
+            <svg class="w-24 h-24 drop-shadow" viewBox="0 0 100 100">
+              <ellipse cx="50" cy="55" rx="35" ry="30" fill="#fed7aa" stroke="#fdba74" stroke-width="2"/>
+              <!-- Ears -->
+              <polygon points="25,40 12,15 42,26" fill="#fb923c"/>
+              <polygon points="75,40 88,15 58,26" fill="#fb923c"/>
+              <!-- Stripes -->
+              <path d="M45 35 L47 43 M50 33 L50 44 M55 35 L53 43" stroke="#c2410c" stroke-width="2" stroke-linecap="round"/>
+              <!-- Sleepy Eyes -->
+              <path d="M34 53 Q40 58 46 53" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <path d="M54 53 Q60 58 66 53" stroke="#4a5568" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <!-- Nose -->
+              <polygon points="50,59 47,56 53,56" fill="#ea580c"/>
+              <circle cx="30" cy="58" r="4.5" fill="#fca5a5" opacity="0.7"/>
+              <circle cx="70" cy="58" r="4.5" fill="#fca5a5" opacity="0.7"/>
+            </svg>
+          </div>
+          <h3 class="font-bubble font-bold text-slate-800 text-lg">Latte</h3>
+          <p class="text-xs text-amber-600 font-semibold mt-0.5">The Cuddle Tabby ☕</p>
+          <div class="mt-3 text-xs bg-amber-50 text-amber-700 py-1.5 px-3 rounded-full border border-amber-200">
+            🐾 Click to belly tickle!
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Treat Dispenser Bar -->
+      <div class="mt-8 text-center">
+        <button id="btn-feed-treats" class="px-5 py-2.5 rounded-full font-bold text-sm bg-white border border-purple-300 text-purple-700 shadow-sm hover:bg-purple-50 transition transform active:scale-95 inline-flex items-center gap-2">
+          <span>🐟</span> <span>Feed Cat Treats to the Kitties</span>
+        </button>
+        <div id="treat-tray" class="h-8 mt-2 flex items-center justify-center gap-3"></div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: "WHY MIMI IS PURR-FECT" FLIP CARDS -->
+    <section id="flip-cards" class="scroll-mt-20">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs font-bold tracking-wider uppercase text-rose-600 bg-rose-100 px-3 py-1 rounded-full">
+          Sweet Little Things
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          Why Mimi is Purr-fect 💖
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Click any card to flip it and reveal why you mean the absolute world to me.
+        </p>
+
+        <div class="mt-4">
+          <button id="btn-flip-all-cards" class="text-xs font-bold text-rose-600 hover:text-rose-700 underline cursor-pointer">
+            ✨ Flip All Cards
+          </button>
+        </div>
+      </div>
+
+      <!-- 6 Flip Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        
+        <!-- CARD 1 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-pink-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">🐱</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">Your Cute Laugh</h3>
+              <p class="text-xs text-pink-500 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-pink-500 to-rose-400 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">✨</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "The way your laugh crinkles your eyes and lights up the whole room is my absolute favorite sound in the world."
+              </p>
+              <span class="text-xs text-pink-200 mt-3 font-bold">100% Pure Joy</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-purple-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">🌸</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">The Warmest Heart</h3>
+              <p class="text-xs text-purple-500 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-purple-500 to-pink-500 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">💖</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "You are endlessly kind, thoughtful, and patient. You make everyone around you feel valued, cherished, and safe."
+              </p>
+              <span class="text-xs text-purple-200 mt-3 font-bold">The Kindest Soul</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-amber-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">🐾</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">Your Funny Quirks</h3>
+              <p class="text-xs text-amber-500 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-amber-400 to-rose-400 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">🥰</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "Your little happy food dances, your dramatic yawns, and your silly jokes that make no sense but make me smile endlessly."
+              </p>
+              <span class="text-xs text-amber-100 mt-3 font-bold">Unmatched Cuteness</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-pink-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">🧶</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">My Safe Haven</h3>
+              <p class="text-xs text-pink-500 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-rose-500 to-pink-500 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">🏡</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "Whenever I have had a tiring day, just one tight hug from you feels like slipping under a cozy sunlit blanket."
+              </p>
+              <span class="text-xs text-pink-200 mt-3 font-bold">Always Home with You</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-teal-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">⭐</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">My Prettiest Girl</h3>
+              <p class="text-xs text-teal-600 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-teal-400 to-pink-500 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">👑</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "Whether you're dressed up or in your oversized pajama tees with messy hair, you are the most gorgeous person alive."
+              </p>
+              <span class="text-xs text-teal-100 mt-3 font-bold">Flawless Inside & Out</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="flip-card h-56 cursor-pointer">
+          <div class="flip-card-inner">
+            <div class="flip-card-front bg-white p-6 border border-purple-200 shadow-sm flex flex-col items-center justify-center">
+              <span class="text-4xl mb-3">💖</span>
+              <h3 class="font-bubble font-bold text-slate-800 text-lg">Our Tomorrow</h3>
+              <p class="text-xs text-purple-500 mt-1 font-semibold">Tap to flip 🐾</p>
+            </div>
+            <div class="flip-card-back bg-gradient-to-br from-purple-600 to-rose-500 text-white p-6 shadow-md flex flex-col items-center justify-center">
+              <span class="text-2xl mb-2">🌟</span>
+              <p class="text-sm font-medium leading-relaxed">
+                "Another year older, another chapter of laughing together, ordering midnight snacks, and falling deeper in love with you."
+              </p>
+              <span class="text-xs text-purple-200 mt-3 font-bold">Forever & Always</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: MYSTERY GIFT BOXES UNBOXING -->
+    <section id="gift-boxes" class="scroll-mt-20 rounded-3xl bg-white/80 backdrop-blur-sm border border-pink-200 p-6 sm:p-10 shadow-md">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs font-bold tracking-wider uppercase text-amber-600 bg-amber-100 px-3 py-1 rounded-full">
+          Birthday Presents
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          Unwrap Mimi's Mystery Gifts 🎁
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Click to unbox each special voucher. All gifts are 100% redeemable anytime!
+        </p>
+      </div>
+
+      <!-- 3 Mystery Gift Boxes -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        
+        <!-- GIFT 1 -->
+        <div class="gift-box relative bg-pink-50/60 rounded-2xl p-6 border border-pink-200 text-center cursor-pointer transition transform hover:-translate-y-1 shadow-sm" data-gift="1">
+          <!-- Unopened State -->
+          <div class="gift-unopened flex flex-col items-center py-6">
+            <span class="text-6xl animate-bounce">🎁</span>
+            <h3 class="font-bubble font-bold text-slate-800 text-lg mt-4">Mystery Box #1</h3>
+            <p class="text-xs text-pink-600 font-bold mt-1">🎀 Tap to unwrap!</p>
+          </div>
+          <!-- Opened State (Hidden initially) -->
+          <div class="gift-opened hidden flex flex-col items-center py-2">
+            <div class="w-full bg-gradient-to-r from-pink-400 to-rose-400 text-white rounded-xl p-4 shadow">
+              <span class="text-2xl">🎟️</span>
+              <h4 class="font-bubble font-bold text-base mt-1">Golden Voucher</h4>
+              <p class="text-xs text-pink-100 mt-1 font-medium">Unlimited Forehead Kisses & Long Cozy Hugs</p>
+              <div class="mt-3 inline-block bg-white text-pink-600 text-xs px-3 py-1 rounded-full font-bold">
+                Never Expires ♾️
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GIFT 2 -->
+        <div class="gift-box relative bg-purple-50/60 rounded-2xl p-6 border border-purple-200 text-center cursor-pointer transition transform hover:-translate-y-1 shadow-sm" data-gift="2">
+          <!-- Unopened State -->
+          <div class="gift-unopened flex flex-col items-center py-6">
+            <span class="text-6xl animate-bounce" style="animation-delay: 0.2s">🎁</span>
+            <h3 class="font-bubble font-bold text-slate-800 text-lg mt-4">Mystery Box #2</h3>
+            <p class="text-xs text-purple-600 font-bold mt-1">🎀 Tap to unwrap!</p>
+          </div>
+          <!-- Opened State -->
+          <div class="gift-opened hidden flex flex-col items-center py-2">
+            <div class="w-full bg-gradient-to-r from-purple-500 to-indigo-500 text-white rounded-xl p-4 shadow">
+              <span class="text-2xl">🍽️</span>
+              <h4 class="font-bubble font-bold text-base mt-1">VIP Date Pass</h4>
+              <p class="text-xs text-purple-100 mt-1 font-medium">Mimi's Choice Date: All your cravings, favorite snacks & fun!</p>
+              <div class="mt-3 inline-block bg-white text-purple-700 text-xs px-3 py-1 rounded-full font-bold">
+                All Expenses On Me 💳
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GIFT 3 -->
+        <div class="gift-box relative bg-amber-50/60 rounded-2xl p-6 border border-amber-200 text-center cursor-pointer transition transform hover:-translate-y-1 shadow-sm" data-gift="3">
+          <!-- Unopened State -->
+          <div class="gift-unopened flex flex-col items-center py-6">
+            <span class="text-6xl animate-bounce" style="animation-delay: 0.4s">🎁</span>
+            <h3 class="font-bubble font-bold text-slate-800 text-lg mt-4">Mystery Box #3</h3>
+            <p class="text-xs text-amber-600 font-bold mt-1">🎀 Tap to unwrap!</p>
+          </div>
+          <!-- Opened State -->
+          <div class="gift-opened hidden flex flex-col items-center py-2">
+            <div class="w-full bg-gradient-to-r from-amber-400 to-orange-400 text-white rounded-xl p-4 shadow">
+              <span class="text-2xl">💆‍♀️</span>
+              <h4 class="font-bubble font-bold text-base mt-1">Comfort Pass</h4>
+              <p class="text-xs text-amber-100 mt-1 font-medium">Late night listening ear, soothing back rubs & breakfast in bed</p>
+              <div class="mt-3 inline-block bg-white text-amber-700 text-xs px-3 py-1 rounded-full font-bold">
+                Redeemable 24/7 💖
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: CAT-SEALED LOVE LETTER -->
+    <section id="love-letter-section" class="scroll-mt-20">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs font-bold tracking-wider uppercase text-pink-600 bg-pink-100 px-3 py-1 rounded-full">
+          From the Bottom of My Heart
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          A Secret Letter for Mimi 💌
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Tap the golden cat paw wax seal to open and read your birthday love letter.
+        </p>
+      </div>
+
+      <!-- ENVELOPE INTERACTION -->
+      <div class="max-w-xl mx-auto envelope-wrapper px-2">
+        <div id="love-envelope" class="envelope relative bg-rose-200/90 rounded-2xl border-2 border-rose-300 shadow-xl overflow-hidden pt-8 pb-12 px-6 sm:px-10 transition-all duration-700 min-h-[380px] flex flex-col items-center justify-between">
+          
+          <!-- Wax Seal Button -->
+          <div class="z-30 my-4">
+            <button id="envelope-seal" class="px-5 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-amber-400 to-yellow-500 text-amber-950 border-2 border-amber-300 shadow-lg hover:scale-105 transition transform active:scale-95 flex items-center gap-2">
+              <span>🐾</span> <span>Tap to Open Letter</span>
+            </button>
+          </div>
+
+          <!-- The Sliding Love Letter Paper -->
+          <div class="letter-paper bg-white rounded-xl shadow-lg border border-pink-100 p-6 sm:p-8 w-full max-w-md my-4 relative">
+            <!-- Cute Letter Header Decor -->
+            <div class="flex items-center justify-between border-b border-pink-100 pb-3 mb-4">
+              <span class="text-sm font-bold text-pink-500 font-bubble">Happy Birthday Mimi</span>
+              <span class="text-lg">🐱💕</span>
+            </div>
+
+            <!-- Recipient -->
+            <h3 id="letter-recipient" class="font-script text-2xl sm:text-3xl text-pink-600 mb-3">
+              Dearest Mimi,
+            </h3>
+
+            <!-- Body Text -->
+            <p id="letter-body" class="text-slate-700 text-sm sm:text-base leading-relaxed whitespace-pre-line font-medium">
+              You make every single day brighter, softer, and so much happier. Happy Birthday to the sweetest girl in the universe!
+              
+              Thank you for your warmth, your infectious giggles, your random cute dances, and the peaceful feeling I have whenever I am with you. 
+
+              I hope this year brings you everything you've ever wished for, because no one deserves good things more than you do. I love you to the moon, beyond all the stars, and back!
+            </p>
+
+            <!-- Signoff -->
+            <div class="mt-6 text-right">
+              <p id="letter-signoff" class="font-script text-xl sm:text-2xl text-pink-600 whitespace-pre-line">
+                Forever & always,
+                Your Favorite Human ❤️
+              </p>
+            </div>
+          </div>
+
+          <!-- Bottom Flap Decor -->
+          <div class="text-xs text-rose-700/80 font-semibold tracking-wide">
+            🐾 Written with all the love in the universe
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: SWEET MEMORIES POLAROID WALL -->
+    <section id="polaroid-wall" class="scroll-mt-20">
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <span class="text-xs font-bold tracking-wider uppercase text-purple-600 bg-purple-100 px-3 py-1 rounded-full">
+          Favorite Moments
+        </span>
+        <h2 class="text-2xl sm:text-4xl font-bold font-bubble text-slate-800 mt-2">
+          Mimi's Polaroid Memory Wall 📸
+        </h2>
+        <p class="text-sm sm:text-base text-slate-500 mt-1">
+          Sweet snapshots of happiness! (You can also click "Change Photo" to upload your real photos together).
+        </p>
+      </div>
+
+      <!-- Polaroid Cards Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        
+        <!-- POLAROID 1 -->
+        <div class="polaroid-item relative flex flex-col items-center">
+          <div class="washi-tape"></div>
+          <div class="polaroid-card rounded-xl border border-pink-100 w-full transform -rotate-2">
+            <div class="h-56 bg-pink-50 rounded-lg overflow-hidden flex items-center justify-center border border-pink-100 relative">
+              <img class="polaroid-img w-full h-full object-cover" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23fff0f5'%3E%3Crect width='300' height='300' fill='%23fff0f5'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E😻🌸%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='16' font-family='sans-serif' fill='%23db2777' font-weight='bold' text-anchor='middle'%3EMimi's Brightest Smile%3C/text%3E%3C/svg%3E" alt="Memory 1">
+            </div>
+            <p class="text-center font-bubble font-semibold text-slate-700 text-sm mt-3">
+              The Day We Laughed Until Our Tummies Hurt 🌸
+            </p>
+            <div class="mt-2 text-center">
+              <button class="btn-change-photo text-xs font-semibold text-pink-600 hover:text-pink-700 underline">
+                📷 Change Photo
+              </button>
+              <input type="file" class="polaroid-file-input hidden" accept="image/*">
+            </div>
+          </div>
+        </div>
+
+        <!-- POLAROID 2 -->
+        <div class="polaroid-item relative flex flex-col items-center">
+          <div class="washi-tape bg-pink-200/80"></div>
+          <div class="polaroid-card rounded-xl border border-pink-100 w-full transform rotate-2">
+            <div class="h-56 bg-purple-50 rounded-lg overflow-hidden flex items-center justify-center border border-purple-100 relative">
+              <img class="polaroid-img w-full h-full object-cover" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23fdf4ff'%3E%3Crect width='300' height='300' fill='%23fdf4ff'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E☕🧶%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='16' font-family='sans-serif' fill='%239333ea' font-weight='bold' text-anchor='middle'%3ECozy Sunday Cuddles%3C/text%3E%3C/svg%3E" alt="Memory 2">
+            </div>
+            <p class="text-center font-bubble font-semibold text-slate-700 text-sm mt-3">
+              Warm Sunbeams & Lazy Afternoons ☕
+            </p>
+            <div class="mt-2 text-center">
+              <button class="btn-change-photo text-xs font-semibold text-purple-600 hover:text-purple-700 underline">
+                📷 Change Photo
+              </button>
+              <input type="file" class="polaroid-file-input hidden" accept="image/*">
+            </div>
+          </div>
+        </div>
+
+        <!-- POLAROID 3 -->
+        <div class="polaroid-item relative flex flex-col items-center">
+          <div class="washi-tape bg-amber-200/80"></div>
+          <div class="polaroid-card rounded-xl border border-pink-100 w-full transform -rotate-1">
+            <div class="h-56 bg-amber-50 rounded-lg overflow-hidden flex items-center justify-center border border-amber-100 relative">
+              <img class="polaroid-img w-full h-full object-cover" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23fffbeb'%3E%3Crect width='300' height='300' fill='%23fffbeb'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🍜✨%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='16' font-family='sans-serif' fill='%23d97706' font-weight='bold' text-anchor='middle'%3EFavorite Food Dates%3C/text%3E%3C/svg%3E" alt="Memory 3">
+            </div>
+            <p class="text-center font-bubble font-semibold text-slate-700 text-sm mt-3">
+              Eating Yummy Treats Together 🍜
+            </p>
+            <div class="mt-2 text-center">
+              <button class="btn-change-photo text-xs font-semibold text-amber-600 hover:text-amber-700 underline">
+                📷 Change Photo
+              </button>
+              <input type="file" class="polaroid-file-input hidden" accept="image/*">
+            </div>
+          </div>
+        </div>
+
+        <!-- POLAROID 4 -->
+        <div class="polaroid-item relative flex flex-col items-center">
+          <div class="washi-tape bg-teal-200/80"></div>
+          <div class="polaroid-card rounded-xl border border-pink-100 w-full transform rotate-3">
+            <div class="h-56 bg-rose-50 rounded-lg overflow-hidden flex items-center justify-center border border-rose-100 relative">
+              <img class="polaroid-img w-full h-full object-cover" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300' fill='%23fff1f2'%3E%3Crect width='300' height='300' fill='%23fff1f2'/%3E%3Ctext x='50%25' y='45%25' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌅💖%3C/text%3E%3Ctext x='50%25' y='65%25' font-size='16' font-family='sans-serif' fill='%23e11d48' font-weight='bold' text-anchor='middle'%3EEvery Step with You%3C/text%3E%3C/svg%3E" alt="Memory 4">
+            </div>
+            <p class="text-center font-bubble font-semibold text-slate-700 text-sm mt-3">
+              Holding Hands Everywhere We Go 🌅
+            </p>
+            <div class="mt-2 text-center">
+              <button class="btn-change-photo text-xs font-semibold text-rose-600 hover:text-rose-700 underline">
+                📷 Change Photo
+              </button>
+              <input type="file" class="polaroid-file-input hidden" accept="image/*">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: DAILY WHISKER FORTUNE / CAT ORACLE -->
+    <section class="rounded-3xl bg-gradient-to-r from-purple-100/90 via-pink-100/90 to-amber-100/90 border border-pink-200 p-6 sm:p-10 shadow-md text-center max-w-3xl mx-auto">
+      <span class="text-xs font-bold tracking-wider uppercase text-purple-700 bg-white/80 px-3 py-1 rounded-full shadow-sm">
+        Whisker Oracle
+      </span>
+      <h2 class="text-2xl sm:text-3xl font-bold font-bubble text-slate-800 mt-2">
+        Mimi's Lucky Cat Birthday Fortune 🔮
+      </h2>
+      <p class="text-sm text-slate-600 mt-1 max-w-md mx-auto">
+        Tap the lucky cat paw below to draw your cosmic birthday blessing!
+      </p>
+
+      <div class="mt-6 flex flex-col items-center">
+        <!-- Fortune Card Box -->
+        <div id="cat-fortune-card" class="bg-white/95 rounded-2xl p-6 border-2 border-pink-200 shadow-md w-full max-w-md transition-all duration-300">
+          <p id="cat-fortune-text" class="text-base sm:text-lg font-bubble font-semibold text-pink-700 leading-relaxed">
+            🐾 Mimi, the stars predict you will be smothered in love, warm hugs, and sweet snacks today!
+          </p>
+        </div>
+
+        <button id="btn-cat-fortune" class="mt-5 px-6 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-purple-600 to-pink-600 text-white shadow-md hover:shadow-lg transition transform active:scale-95 inline-flex items-center gap-2">
+          <span>🐾</span> <span>Draw Another Fortune</span>
+        </button>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-pink-200 bg-white/80 py-8 px-4 text-center relative z-10">
+    <div class="max-w-md mx-auto space-y-2">
+      <p class="font-bubble text-lg font-bold text-pink-600">
+        Happy Birthday, <span id="footer-mimi-name">Mimi</span>! 🐾🎂
+      </p>
+      <p class="text-xs sm:text-sm text-slate-500">
+        Crafted with infinite love, purrs, and warm cuddles.
+      </p>
+      <div class="pt-2 flex justify-center items-center gap-2 text-xs text-slate-400">
+        <span>🔇 100% Peaceful Audio-Free Experience</span>
+        <span>•</span>
+        <span>Made Just for You</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PERSONALIZE MODAL -->
+  <div id="personalize-modal" class="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-pink-200 space-y-4">
+      <div class="flex items-center justify-between border-b border-pink-100 pb-3">
+        <h3 class="font-bubble font-bold text-xl text-slate-800 flex items-center gap-2">
+          <span>✏️</span> <span>Personalize for Mimi</span>
+        </h3>
+        <button id="btn-close-personalize" class="text-slate-400 hover:text-slate-600 text-xl font-bold">
+          ✕
+        </button>
+      </div>
+
+      <div class="space-y-3 text-sm">
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Girlfriend's Name / Nickname</label>
+          <input id="input-mimi-name" type="text" class="w-full px-3.5 py-2 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 text-slate-800" placeholder="e.g. Mimi, Mimz, Cutie">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Your Sign-off / Name</label>
+          <input id="input-sender-name" type="text" class="w-full px-3.5 py-2 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 text-slate-800" placeholder="e.g. Your Boyfriend ❤️">
+        </div>
+
+        <div>
+          <label class="block font-semibold text-slate-700 mb-1">Custom Birthday Letter / Note</label>
+          <textarea id="input-special-note" rows="4" class="w-full px-3.5 py-2 rounded-xl border border-pink-200 focus:outline-none focus:ring-2 focus:ring-pink-400 text-slate-800 resize-none" placeholder="Write any personal message, memory, or inside jokes here..."></textarea>
+        </div>
+      </div>
+
+      <div class="pt-3 flex gap-2 justify-end">
+        <button id="btn-save-personalize" class="px-5 py-2.5 rounded-full font-bold text-sm bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow hover:opacity-95 transition">
+          💾 Save & Update Site
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript Logic (Zero Audio) -->
+  <script src="scripts/app.js"></script>
+</body>
+</html>
